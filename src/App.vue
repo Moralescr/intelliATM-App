@@ -6,19 +6,23 @@
     </v-app-bar>
     <v-spacer></v-spacer>
     <v-main>
-      <MainApp />
+      <ATMConnection />
     </v-main>
   </v-app>
 </template>
 
 <script>
-import MainApp from "./components/MainApp";
+//Components
+import ATMConnection from "./components/ATMConnection.vue";
+//Views components
+//import HomeApp from "./views/HomeApp";
 
 export default {
   name: "App",
 
   components: {
-    MainApp
+    //HomeApp,
+    ATMConnection,
   },
   data: () => ({
     title: "IntelliATM App",

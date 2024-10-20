@@ -4,10 +4,9 @@ import vuetify from './plugins/vuetify'
 import axios from 'axios'
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
-import '@babel/polyfill'
 
 Vue.config.productionTip = false
-Vue.prototype.$http = axios; //Global axios
+Vue.prototype.$axios = axios; //Global axios
 
 new Vue({
   vuetify,
