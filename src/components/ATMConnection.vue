@@ -59,7 +59,7 @@ export default {
     port: "",
   }),
   methods: {
-    connection() {
+    async connection() {
       let url = "http://localhost:3000/connect";
       let parametros = {
         atmCode: this.atmCode,
@@ -67,8 +67,7 @@ export default {
         port: this.port,
       };
 
-      this.$axios
-        .post(url, parametros)
+      await this.$axios.post(url, parametros)
         .then((response) => {
           console.log(response);
         })
