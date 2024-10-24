@@ -9,27 +9,30 @@
       >
         <v-card>
           <v-card-title class="blue darken-4 white--text"
-            >ATM connection</v-card-title
+            >IntelliATM - ATM connection</v-card-title
           >
           <v-form @submit.prevent="connection()">
             <v-card-text>
               <v-container>
                 <v-row>
-                  <v-col cols="12" md="2">
+                  <v-col cols="12" md="6">
                     <v-text-field v-model="atmCode" label="Type a ATM code">{{
                       atmCode
                     }}</v-text-field>
                   </v-col>
                 </v-row>
                 <v-row>
-                  <v-col cols="12" md="8">
-                    <v-text-field v-model="host" label="Type a IP to connect">{{
-                      host
-                    }}</v-text-field>
+                  <v-col cols="12" md="6">
+                    <v-select
+                      variant="outlined"
+                      v-model="host" 
+                      label="Select a IP to connect"
+                      :items="['10.15.1.51', '10.45.1.51']"
+                    ></v-select>
                   </v-col>
                 </v-row>
                 <v-row>
-                  <v-col cols="12" md="8">
+                  <v-col cols="12" md="6">
                     <v-text-field
                       v-model="port"
                       label="Type a port to connect"
@@ -51,8 +54,11 @@
 </template>
 
 <script>
+//Components
 export default {
   name: "ATMConnection",
+  components:{
+  },
   data: () => ({
     atmCode: "",
     host: "",
@@ -70,6 +76,11 @@ export default {
       await this.$axios.post(url, parametros)
         .then((response) => {
           console.log(response);
+          if (response.data === true){
+            //if
+          }else{
+           //else 
+          }
         })
         .catch((error) => {
           console.log(error.response);
