@@ -1,5 +1,5 @@
 <template>
-    <div class="flex text-center">
+    <div class="appcolor flex py-2 white--text text-center">
         {{ new Date().getFullYear() }} - <strong>All rights reserved</strong>
     </div>
 </template>
